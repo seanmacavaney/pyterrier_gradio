@@ -18,7 +18,7 @@ th .min-h-\[2\.3rem\] {
 
 .transformer {
   display: inline-block;
-  background: #8facdb;
+  background: #ddd;
   position: relative;
   height: 60px;
   line-height: 60px;
@@ -34,8 +34,8 @@ th .min-h-\[2\.3rem\] {
   bottom: 0;
   top: 0;
   left: -15px;
-  border-top: 30px solid #8facdb;
-  border-bottom: 30px solid #8facdb;
+  border-top: 30px solid #ddd;
+  border-bottom: 30px solid #ddd;
   border-left: 15px solid transparent;
 }
 
@@ -47,21 +47,20 @@ th .min-h-\[2\.3rem\] {
   right: -15px;
   border-top: 30px solid transparent;
   border-bottom: 30px solid transparent;
-  border-left: 15px solid #8facdb;
+  border-left: 15px solid #ddd;
 }
 
-.transformer.boring {
-  background: #ddd;
-}
+.transformer:hover {background: #ccc;}
+.transformer:hover::before {border-top-color: #ccc; border-bottom-color: #ccc;}
+.transformer:hover::after {border-left-color: #ccc;}
 
-.transformer.boring::before {
-  border-top-color: #ddd;
-  border-bottom-color: #ddd;
-}
+.transformer.attn {background: #8facdb;}
+.transformer.attn::before {border-top-color: #8facdb; border-bottom-color: #8facdb;}
+.transformer.attn::after {border-left-color: #8facdb;}
 
-.transformer.boring::after {
-  border-left-color: #ddd;
-}
+.transformer.attn:hover {background: #5485d6;}
+.transformer.attn:hover::before {border-top-color: #5485d6; border-bottom-color: #5485d6;}
+.transformer.attn:hover::after {border-left-color: #5485d6;}
 
 .df {
   width: 24px;

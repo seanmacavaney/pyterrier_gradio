@@ -1,0 +1,116 @@
+table.font-mono td, table.font-mono th {
+  white-space: pre-line;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+table.font-mono td input {
+  width: 95%;
+}
+
+th .cursor-pointer {
+  display: none;
+}
+
+th .min-h-\[2\.3rem\] {
+  min-height: inherit;
+}
+
+.transformer {
+  display: inline-block;
+  background: #8facdb;
+  position: relative;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 24px;
+  margin: 0 18px;
+  color: #333;
+  cursor: help;
+}
+
+.transformer::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: -15px;
+  border-top: 30px solid #8facdb;
+  border-bottom: 30px solid #8facdb;
+  border-left: 15px solid transparent;
+}
+
+.transformer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: -15px;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 15px solid #8facdb;
+}
+
+.transformer.boring {
+  background: #ddd;
+}
+
+.transformer.boring::before {
+  border-top-color: #ddd;
+  border-bottom-color: #ddd;
+}
+
+.transformer.boring::after {
+  border-left-color: #ddd;
+}
+
+.df {
+  width: 24px;
+  line-height: 24px;
+  text-align: center;
+  border: 3px double #888;
+  background-color: #eee;
+  color: #333;
+  border-radius: 4px;
+  display: inline-block;
+  box-sizing: content-box;
+  cursor: help;
+  margin: 0 -25px;
+  opacity: 0.5;
+  z-index: 1;
+  position: relative;
+}
+.df:hover {
+  opacity: 1;
+}
+
+.pipeline {
+  text-align: center;
+}
+
+.artefact {
+  width: 32px;
+  line-height: 32px;
+  background: #eee;
+  display: inline-block;
+  box-sizing: content-box;
+  cursor: help;
+  margin: 0 -25px;
+  z-index: 1;
+  opacity: 0.5;
+  position: relative;
+  color: #333;
+  text-align: center;
+  border: 3px double #888;
+  border-radius: 50%
+}
+
+.artefact:hover {
+  opacity: 1;
+}
+
+.transformer .artefact {
+  bottom: -18px;
+  left: 50%;
+  margin-left: -16px;
+  position: absolute;
+}

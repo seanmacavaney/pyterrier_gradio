@@ -17,6 +17,6 @@ setup(
         'python-terrier', 'gradio'
     ],
     package_data={
-        'pyterrier_gradio': ['pyterrier_gradio/style.css'],
+        'pyterrier_gradio': ['style.css'],
     },
 )

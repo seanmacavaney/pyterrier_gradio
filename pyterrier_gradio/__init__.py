@@ -37,6 +37,26 @@ EX_D = {
   ]),
 }
 
+EX_R = {
+  '': pd.DataFrame([
+     ['1108939', '4069373', 0, 36.19, 'what slows down the flow of blood', '  As all blood flows back to the heart, clamping down on blood vessels is very important in open heart surgery. Clamping down on blood vessels will slow down blood flow so … that while in surgry, the blood wouldn\'t come in, as it naturally would, and flood the chambers of the heart.'],
+     ['1108939', '4744533', 1, 35.87, 'what slows down the flow of blood', 'Several factors combine to bring on an occlusion. The usual situation is that the blood flow in a retinal vein is slowed down and a clot forms. The clot prevents blood from flowing freely. The blood is back logged and spills into the retina. The most common reason for slowed venous blood flow is a hardened artery (arteriosclerosis).'],
+     ['1108939', '7454708', 2, 34.21, 'what slows down the flow of blood', 'Congenital heart defects can disrupt the normal flow of blood through the heart. The defect may cause the blood flow to slow down, go in the wrong direction, go to the wrong place, or it may block the flow completely.'],
+     ['1108939', '7724054', 3, 33.89, 'what slows down the flow of blood', 'Such discharges occur during a woman’s period and consist of blood that has been either in the vagina or in the uterus. It is normal when these discharges occur closer to the end of a woman’s period when blood flow slows down, or at the beginning, just before blood flow picks up.'],
+     ['1108939', '841975', 4, 33.76, 'what slows down the flow of blood', 'Back to TopSymptoms ». Hardening of the arteries does not cause symptoms until blood flow to part of the body becomes slowed or blocked. If the arteries to the heart become narrow, blood flow to the heart can slow down or stop. This can cause chest pain (stable angina), shortness of breath, and other symptoms.'],
+     ['1112389', '4337251', 0, 35.4, 'what is the county for grand rapids, mn', 'Find Grand Rapids, MN clerk, including county, city, and circuit clerk, and clerk of court. Clerks x Minnesota x Itasca County x Grand Rapids x.'],
+     ['1112389', '4931198', 1, 35.39, 'what is the county for grand rapids, mn', 'Portions of 55744 are also located in Aitkin County. The official US Postal Service name for 55744 is GRAND RAPIDS, Minnesota. Portions of zip code 55744 are contained within or border the city limits of Grand Rapids, MN, Cohasset, MN, La Prairie, MN, and Coleraine, MN. The area code for zip code 55744 is 218.'],
+     ['1112389', '8060375', 2, 33.85, 'what is the county for grand rapids, mn', 'Grand Forks Township is a township in Polk County, Minnesota, United States. It is part of the Grand Forks-ND-MN Metropolitan Statistical Area.'],
+     ['1112389', '8138768', 3, 33.51, 'what is the county for grand rapids, mn', 'Location. 1  Grand Rapids, MN (83) 2  Deer River, MN (3) 3  Cohasset, MN (3) 4  Remer, MN (2) 5  Warba, MN (1) 6  Hill City, MN (1) 7  Coleraine, MN (1) 8  Itasca County, Mn jobs nationwide.'],
+     ['1112389', '8138765', 4, 33.05, 'what is the county for grand rapids, mn', 'Applebee\'s | Apple American Group - 7,516 reviews - Grand Rapids, MN 55744. 1  2083 - Pokegama - Grand Rapids, MN. 2840 S Hwy 169 Grand Rapids, MN - 55744. 2  We have immediate Part Time opportunities available in Grand Rapids, MN .'],
+     ['792752', '6571521', 0, 33.05, 'what is ruclip', 'WE WORKED SO HARD FOR THIS GAMEPLAY, PLEASE LEAVE US A LIKE 😭😂 Subscribe for more: ruclip.com/user/tmartn2 Fortnite Battle Royal Playlist: ruclip.com/p/PLwiTZDxPg_I3t0JKZCC5mpVGyPn0b5VKA Expand the description for more Friends in the video: Jimmy: ruclip.com/user/chaosxsilencer Hollow: ruclip.com/user/hollowpoiint Check out my vlog channel: ruclip.com/user/trevandchels Check out my COD channel: ruclip.com/user/TmarTn Follow my primary twitter: twitter.com/TmarTn Follow the TmarTn2 ...'],
+     ['792752', '8803596', 1, 31.51, 'what is ruclip', 'Is ruclip.net Safe? Reviews & Ratings ruclip.net Site owners click here. Скачать бесплатно и без регистрации музыкальные клипы, тексты песен звезд Российского шоубизнеса. Site owners click here'],
+     ['792752', '8803599', 2, 30.27, 'what is ruclip', 'Ruclip is a fast Youtube video downloader service. Now download videos in all formats from Youtube using Ruclip video downloader. Using Ruclip you can download any type of videos from the Youtube. Using it you can search the videos also and can play them too before downloading. You can even search the episodes and movies and download them.'],
+     ['792752', '8803595', 3, 29.17, 'what is ruclip', 'ruclip.net Site owners click here Скачать бесплатно и без регистрации музыкальные клипы, тексты песен звезд Российского шоубизнеса'],
+     ['792752', '8803603', 4, 27.59, 'what is ruclip', 'Ruclip is based on super fast script which can handle a number of downloads simultaneously. So you will never any downloading speed issue. So enjoy downloading videos from Youtube using Ruclip and showcase, watch and listen to the ocean of never ending digital video download stream.'],
+  ], columns=['qid', 'docno', 'rank', 'score', 'query', 'text'])
+}
+
 class MarkdownFile:
   def __init__(self, path):
     self.path = path
@@ -123,10 +143,16 @@ def code2colab(code, COLAB_INSTALL, COLAB_NAME):
   return f'<div style="text-align: center; margin-bottom: -16px;"><a href="{url}" rel="nofollow" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="margin: 0; display: inline-block;" /></a></div>'
 
 
-def code2md(code, COLAB_INSTALL, COLAB_NAME):
-  return f'''
+def code2md(code, COLAB_INSTALL, COLAB_NAME, colab=True):
+  if colab:
+    return f'''
 {code2colab(code, COLAB_INSTALL, COLAB_NAME)}
 
+```python
+{code.strip()}
+```
+'''
+  return f'''
 ```python
 {code.strip()}
 ```

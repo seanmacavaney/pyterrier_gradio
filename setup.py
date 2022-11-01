@@ -5,7 +5,7 @@ with open('README.md') as f:
 
 setup(
     name='pyterrier_gradio',
-    version='0.0.3',
+    version='0.0.5',
     description='Tools for building PyTerrier demos using Gradio',
     url='https://github.com/seanmacavaney/pyterrier_gradio',
     classifiers=[

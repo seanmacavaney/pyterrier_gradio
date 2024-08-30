@@ -128,13 +128,17 @@ def interface(*items):
 
 
 def df2code(df):
+  return f'pd.DataFrame({df2list(df)})'
+
+
+def df2list(df):
   rows = []
   for row in df.itertuples(index=False):
     rows.append(f'  {dict(row._asdict())},')
   rows = '\n'.join(rows)
-  return f'''pd.DataFrame([
+  return f'''[
 {rows}
-])'''
+]'''
 
 
 def code2colab(code, COLAB_INSTALL, COLAB_NAME):

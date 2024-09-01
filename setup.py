@@ -14,7 +14,7 @@ setup(
     # as per splade
     long_description=readme,
     install_requires=[
-        'python-terrier', 'gradio'
+        'python-terrier', 'gradio>=4.42.0', 'pyterrier-alpha>=0.8.0',
     ],
     package_data={
         'pyterrier_gradio': ['style.css'],

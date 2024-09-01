@@ -144,7 +144,7 @@ def df2list(df):
 def code2colab(code, COLAB_INSTALL, COLAB_NAME):
   code = COLAB_INSTALL + '\n\n' + code.strip()
   colab_html = pta.colab.code_html(code, COLAB_NAME)
-  return f'<div style="text-align: center;>{colab_html}</div>'
+  return f'<div style="text-align: center;">{colab_html}</div>'
 
 
 def code2md(code, COLAB_INSTALL, COLAB_NAME, colab=True):

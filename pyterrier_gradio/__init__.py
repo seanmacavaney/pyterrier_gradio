@@ -1,8 +1,8 @@
 import pkgutil
-import base64
 import itertools
 import gradio as gr
 import pandas as pd
+import pyterrier_alpha as pta
 
 counter = itertools.count()
 
@@ -84,7 +84,7 @@ class Demo:
     input = next(iter(self.inputs.values()))
     output = self.predict(input, *[s.value for s in self.settings])
     inputs, outputs = [], []
-    with gr.Row().style(equal_height=False):
+    with gr.Row(equal_height=False):
       with gr.Column(scale=self.scale):
         with gr.Tab('Pipeline Input'):
           inputs.append(gr.Dataframe(
@@ -142,9 +142,9 @@ def df2list(df):
 
 
 def code2colab(code, COLAB_INSTALL, COLAB_NAME):
-  enc_code = base64.b64encode((COLAB_INSTALL + '\n\n' + code.strip()).encode()).decode()
-  url = f'https://colaburl.macavaney.us/?py64={enc_code}&name={COLAB_NAME}'
-  return f'<div style="text-align: center; margin-bottom: -16px;"><a href="{url}" rel="nofollow" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="margin: 0; display: inline-block;" /></a></div>'
+  code = COLAB_INSTALL + '\n\n' + code.strip()
+  colab_html = pta.colab.code_html(code, COLAB_NAME)
+  return f'<div style="text-align: center;>{colab_html}</div>'
 
 
 def code2md(code, COLAB_INSTALL, COLAB_NAME, colab=True):
